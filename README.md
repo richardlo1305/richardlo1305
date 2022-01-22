@@ -64,7 +64,7 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 - 👋 Hi, I’m @richardlo1305
 - 👀 I’m interested in learning web development, workflow in git repository. 
-- 🌱 I’m currently learning JavaScript, React JS, git and github.
+- 🌱 I’m currently learning Laravel 8, JavaScript, Vue JS, git and github.
 - 💞️ I’m looking to collaborate on JavaScipt, Reac JS or Vue JS projects.
 - 📫 How to reach me in twitter @richardlo05, email ricardolindarteortega@gmail.com
 
