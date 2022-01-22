@@ -19,7 +19,6 @@ class PostSeeder extends Seeder
 
         foreach($posts as $post)
         {
-
             $post->tags()->attach([
                 rand(1,4),
                 rand(5,8)

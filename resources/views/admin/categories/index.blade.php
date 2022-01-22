@@ -3,7 +3,15 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
+
+    @can('admin.categories.create')
+
+        <a class="btn btn-secondary btn-sm float-right" href="{{ route('admin.categories.create') }}">Crear categoría</a>
+        
+    @endcan
+
     <h1>Categorias</h1>
+
 @stop
 
 @section('content')
@@ -15,10 +23,6 @@
     @endif
 
     <div class="card">
-
-        <div class="card-header">
-            <a class="btn btn-secondary" href="{{ route('admin.categories.create') }}">Crear categoría</a>
-        </div>
 
         <div class="card-body">
             
@@ -36,15 +40,22 @@
                             <td>{{ $category->id }}</td>
                             <td>{{ $category->name }}</td>
                             <td width="10px">
-                                <a class="btn btn-primary btn-sm" href="{{ route('admin.categories.edit', $category) }}">Editar</a>
+                                @can('admin.categories.edit')
+                                    <a class="btn btn-primary btn-sm" href="{{ route('admin.categories.edit', $category) }}">Editar</a>
+                                @endcan
+                                
                             </td>
                             <td width="10px">
-                                <form action="{{ route('admin.categories.destroy', $category) }}" method="POST">
-                                    @csrf
-                                    @method('delete')
+                                @can('admin.categories.destroy')
+                                    
+                                    <form action="{{ route('admin.categories.destroy', $category) }}" method="POST">
+                                        @csrf
+                                        @method('delete')
 
-                                    <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
-                                </form>
+                                        <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                                    </form>
+
+                                @endcan
                             </td>
                         </tr>
                     @endforeach
